@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBE: Visual Instruction Based Editor</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Google Fonts: Inter for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #3b82f6; /* Tailwind blue-500 */
+        }
+        .swiper-pagination-bullet-active {
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Section 1: Title and Authors -->
+    <header class="py-16 px-4 max-w-5xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900">VIBE: Visual Instruction Based Editor</h1>
+        
+        <!-- Section 2: Authors -->
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-lg md:text-xl text-slate-600 font-medium mb-8">
+            <span>Grigorii Alekseenko</span>
+            <span>Aleksandr Gordeev</span>
+            <span>Irina Tostykh</span>
+            <span>Bulat Suleimanov</span>
+            <span>Vladimir Dokholyan</span>
+            <span>Georgii Fedorov</span>
+            <span>Sergey Yakubson</span>
+            <span>Aleksandra Tsybina</span>
+            <span>Mikhail Chernyshov</span>
+            <span>Maksim Kuprashevich</span>
+        </div>
+
+        <!-- Section 3: Links -->
+        <div class="flex justify-center gap-4 flex-wrap">
+            <a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                HuggingFace Model
+            </a>
+            <a href="https://github.com/ai-forever/VIBE" target="_blank" class="inline-flex items-center px-6 py-3 bg-slate-800 text-white font-semibold rounded-full hover:bg-slate-900 transition duration-300 shadow-lg">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                GitHub Code
+            </a>
+        </div>
+        
+        <!-- Model Specifications -->
+        <div class="mt-8 text-lg text-slate-600">
+            <p class="mb-2"><strong>GPU Memory:</strong> 24 GB</p>
+            <p><strong>Performance:</strong> Up to 2K resolution in 4 seconds on NVIDIA H100</p>
+        </div>
+    </header>
+
+    <!-- Section 4: Abstract -->
+    <section class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-[80%] mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-center text-slate-900">Abstract</h2>
+            <p class="text-lg leading-relaxed text-slate-700 text-justify">
+                Instruction-based image editing is one of the most rapidly
+                advancing areas in generative AI. Over the past year,
+                progress has been substantial, with dozens of open-source
+                models released alongside several highly capable commercial systems.
+                <br><br>
+                Despite this progress, relatively few open-source models
+                have reached production-level quality. Moreover, diffusion
+                models, the most common backbone for such pipelines, are
+                often prohibitively large and computationally expensive for
+                many real-world deployments and research settings, with
+                popular variants typically ranging from 6B to 20B parameters.
+                <br><br>
+                This paper presents a compact, high-throughput pipeline
+                for instruction-based image editing that uses a modern 
+                2B-parameter Qwen3-VL model to guide the editing process
+                and the 1.6B-parameter diffusion model Sana for image
+                generation. The proposed approach combines architectural
+                choices that enable low-cost inference with data collection
+                and processing, training configuration, and experimental
+                design decisions aimed at maintaining production-level
+                quality across major categories of editing operations that
+                remain feasible at this model scale.
+                <br><br>
+                The model requires 24 GB of GPU memory, and can generate edited images
+                at up to 2K resolution in 4 seconds on an NVIDIA H100.
+                <br><br>
+                The pipeline can also be further distilled.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 5: Model Pipeline -->
+    <section class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-slate-900">Model Pipeline</h2>
+            <div class="flex justify-center">
+                <img src="assets/images/model.png" alt="VIBE Model Pipeline" class="max-w-full h-auto rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Examples (Carousel) -->
+    <section class="py-16 max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center text-slate-900">Dataset Examples</h2>
+        
+        <!-- Swiper Main Container -->
+        <div class="swiper mySwiper h-[40vh] rounded-2xl shadow-2xl bg-white/50">
+            <div class="swiper-wrapper">
+                <!-- Slides (Images from assets/images) -->
+                <div class="swiper-slide">
+                    <img src="assets/images/image_1.png" alt="Dataset Example 1" class="h-full w-auto block object-contain">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/image_2.png" alt="Dataset Example 2" class="h-full w-auto block object-contain">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/image_3.png" alt="Dataset Example 3" class="h-full w-auto block object-contain">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/image_4.png" alt="Dataset Example 4" class="h-full w-auto block object-contain">
+                </div>
+            </div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Section 7: BibTeX -->
+    <section class="py-16 bg-slate-900 text-slate-300">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-white text-center">BibTeX</h2>
+            <div class="bg-slate-800 p-6 rounded-lg relative overflow-x-auto border border-slate-700">
+                <pre class="text-sm font-mono leading-relaxed" id="bibtex-content">@article{vibe2025,
+  title = {VIBE: Visual Instruction Based Editor},
+  author = {Alekseenko Grigorii and Gordeev Aleksandr and Tostykh Irina and Suleimanov Bulat and Dokholyan Vladimir and Fedorov Grorgii and Yakybson Sergei and Tsybina Aleksandra and Chernyshov Mikhail and Kuprashevich Maksim},
+  journal = {arXiv preprint},
+  year = {2025}
+}</pre>
+                <button id="copy-btn" class="absolute top-4 right-4 text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded transition text-white">Copy</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate-500 text-sm">
+        © 2025 Placeholder Research. Built with GitHub Pages.
+    </footer>
+
+    <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

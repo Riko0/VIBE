@@ -1,0 +1,35 @@
+/* Custom styles for the scientific landing page */
+
+/* Smooth swiper transitions */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom styling for the images */
+.swiper-slide img {
+    max-height: 100%;
+    width: auto;
+    user-select: none;
+}
+
+/* Swiper container adjustments */
+.mySwiper {
+    background: transparent !important;
+}
+
+/* Better typography for abstract */
+p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Buttons hover effects */
+a {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+    transform: translateY(-1px);
+}
