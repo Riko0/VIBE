@@ -22,7 +22,7 @@ If you find this work useful, please cite it using the following BibTeX:
 ```bibtex
 @article{vibe2025,
   title  = {VIBE: Visual Instruction Based Editor},
-  author = {Alekseenko Grigorii and Gordeev Aleksandr and Tolstykh Irina and Suleimanov Bulat and Dokholyan Vladimir and Fedorov Georgii and Yakubson Sergey and Tsybina Aleksandra and Chernyshov Mikhail and Kuprashevich Maksim},
+  author = {Grigorii Alekseenko and Aleksandr Gordeev and Irina Tolstykh and Bulat Suleimanov and Vladimir Dokholyan and Georgii Fedorov and Sergey Yakubson and Aleksandra Tsybina and Mikhail Chernyshov and Maksim Kuprashevich},
   journal = {arXiv preprint},
   year = {2025}
 }
