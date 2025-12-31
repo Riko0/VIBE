@@ -49,8 +49,16 @@
 
         <!-- Section 3: Links -->
         <div class="flex justify-center gap-4 flex-wrap">
-            <a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">
+            <span class="inline-flex items-center px-6 py-3 bg-slate-400 text-white font-semibold rounded-full shadow-lg cursor-not-allowed">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                Paper
+            </span>
+            <a href="https://huggingface.co/spaces/iitolstykh/VIBE-Image-Edit-DEMO" target="_blank" class="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition duration-300 shadow-lg">
+                <img src="assets/images/hf-logo.png" alt="HuggingFace" class="w-5 h-5 mr-2">
+                Demo
+            </a>
+            <a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">
+                <img src="assets/images/hf-logo.png" alt="HuggingFace" class="w-5 h-5 mr-2">
                 HuggingFace Model
             </a>
             <a href="https://github.com/ai-forever/VIBE" target="_blank" class="inline-flex items-center px-6 py-3 bg-slate-800 text-white font-semibold rounded-full hover:bg-slate-900 transition duration-300 shadow-lg">
@@ -102,7 +110,16 @@
         </div>
     </section>
 
-    <!-- Section 5: Model Pipeline -->
+    <!-- Section 5: Main Results Collage -->
+    <section class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="assets/images/vibe_collage_main_final_page-0001.jpg" alt="VIBE Main Results" class="max-w-full h-auto rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Model Pipeline -->
     <section class="py-16 bg-white border-y border-slate-200">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold mb-12 text-center text-slate-900">Model Pipeline</h2>
@@ -112,7 +129,20 @@
         </div>
     </section>
 
-    <!-- Section 6: Examples (Carousel) -->
+    <!-- Section 7: Results Collages -->
+    <section class="py-16 max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center text-slate-900">Results</h2>
+        <div class="space-y-8">
+            <div class="flex justify-center">
+                <img src="assets/images/vibe_collage_human_page-0001.jpg" alt="VIBE Human Editing Results" class="max-w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <div class="flex justify-center">
+                <img src="assets/images/vibe_collage_nonhuman_page-0001.jpg" alt="VIBE Non-Human Editing Results" class="max-w-full h-auto rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Examples (Carousel) -->
     <section class="py-16 max-w-6xl mx-auto px-4">
         <h2 class="text-3xl font-bold mb-12 text-center text-slate-900">Dataset Examples</h2>
         
@@ -141,7 +171,7 @@
         </div>
     </section>
 
-    <!-- Section 7: BibTeX -->
+    <!-- Section 9: BibTeX -->
     <section class="py-16 bg-slate-900 text-slate-300">
         <div class="max-w-3xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-8 text-white text-center">BibTeX</h2>
