@@ -9,8 +9,6 @@
     <link rel="apple-touch-icon" href="assets/images/thumbnail.png">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Swiper.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Google Fonts: Inter for modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -18,12 +16,6 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-        }
-        .swiper-button-next, .swiper-button-prev {
-            color: #3b82f6; /* Tailwind blue-500 */
-        }
-        .swiper-pagination-bullet-active {
-            background: #3b82f6;
         }
     </style>
 </head>
@@ -34,17 +26,21 @@
         <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900">VIBE: Visual Instruction Based Editor</h1>
         
         <!-- Section 2: Authors -->
-        <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-lg md:text-xl text-slate-600 font-medium mb-8">
-            <span>Grigorii Alekseenko</span>
-            <span>Aleksandr Gordeev</span>
-            <span>Irina Tolstykh</span>
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-lg md:text-xl text-slate-600 font-medium mb-4">
+            <span>Grigorii Alekseenko<sup>*</sup></span>
+            <span>Aleksandr Gordeev<sup>*</sup></span>
+            <span>Irina Tolstykh<sup>*</sup></span>
             <span>Bulat Suleimanov</span>
             <span>Vladimir Dokholyan</span>
             <span>Georgii Fedorov</span>
             <span>Sergey Yakubson</span>
             <span>Aleksandra Tsybina</span>
             <span>Mikhail Chernyshov</span>
-            <span>Maksim Kuprashevich</span>
+            <span>Maksim Kuprashevich<sup>†</sup></span>
+        </div>
+        <div class="text-sm text-slate-500 mb-8">
+            <p><sup>*</sup>Equal contribution</p>
+            <p><sup>†</sup>Corresponding author: <a href="mailto:mvkuprashevich@gmail.com" class="text-blue-600 hover:text-blue-800">mvkuprashevich@gmail.com</a></p>
         </div>
 
         <!-- Section 3: Links -->
@@ -104,8 +100,6 @@
                 <br><br>
                 The model requires 24 GB of GPU memory, and can generate edited images
                 at up to 2K resolution in 4 seconds on an NVIDIA H100.
-                <br><br>
-                The pipeline can also be further distilled.
             </p>
         </div>
     </section>
@@ -142,45 +136,16 @@
         </div>
     </section>
 
-    <!-- Section 8: Examples (Carousel) -->
-    <section class="py-16 max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center text-slate-900">Dataset Examples</h2>
-        
-        <!-- Swiper Main Container -->
-        <div class="swiper mySwiper h-[40vh] rounded-2xl shadow-2xl bg-white/50">
-            <div class="swiper-wrapper">
-                <!-- Slides (Images from assets/images) -->
-                <div class="swiper-slide">
-                    <img src="assets/images/image_1.png" alt="Dataset Example 1" class="h-full w-auto block object-contain">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/images/image_2.png" alt="Dataset Example 2" class="h-full w-auto block object-contain">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/images/image_3.png" alt="Dataset Example 3" class="h-full w-auto block object-contain">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/images/image_4.png" alt="Dataset Example 4" class="h-full w-auto block object-contain">
-                </div>
-            </div>
-            <!-- Navigation buttons -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
-
-    <!-- Section 9: BibTeX -->
+    <!-- Section 8: BibTeX -->
     <section class="py-16 bg-slate-900 text-slate-300">
         <div class="max-w-3xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-8 text-white text-center">BibTeX</h2>
             <div class="bg-slate-800 p-6 rounded-lg relative overflow-x-auto border border-slate-700">
-                <pre class="text-sm font-mono leading-relaxed" id="bibtex-content">@article{vibe2025,
+                <pre class="text-sm font-mono leading-relaxed" id="bibtex-content">@article{vibe2026,
   title = {VIBE: Visual Instruction Based Editor},
   author = {Grigorii Alekseenko and Aleksandr Gordeev and Irina Tolstykh and Bulat Suleimanov and Vladimir Dokholyan and Georgii Fedorov and Sergey Yakubson and Aleksandra Tsybina and Mikhail Chernyshov and Maksim Kuprashevich},
   journal = {arXiv preprint},
-  year = {2025}
+  year = {2026}
 }</pre>
                 <button id="copy-btn" class="absolute top-4 right-4 text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded transition text-white">Copy</button>
             </div>
@@ -189,11 +154,9 @@
 
     <!-- Footer -->
     <footer class="py-8 text-center text-slate-500 text-sm">
-        2025 Layer Team.
+        2026 Layer Team.
     </footer>
 
-    <!-- Swiper.js JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

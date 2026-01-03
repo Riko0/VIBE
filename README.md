@@ -20,10 +20,10 @@ VIBE requires **24 GB of GPU memory**, and can generate edited images at up to *
 If you find this work useful, please cite it using the following BibTeX:
 
 ```bibtex
-@article{vibe2025,
+@article{vibe2026,
   title  = {VIBE: Visual Instruction Based Editor},
   author = {Grigorii Alekseenko and Aleksandr Gordeev and Irina Tolstykh and Bulat Suleimanov and Vladimir Dokholyan and Georgii Fedorov and Sergey Yakubson and Aleksandra Tsybina and Mikhail Chernyshov and Maksim Kuprashevich},
   journal = {arXiv preprint},
-  year = {2025}
+  year = {2026}
 }
 ```
