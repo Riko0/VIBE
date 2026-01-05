@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIBE: Visual Instruction Based Editor</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/thumbnail.png">
     <link rel="apple-touch-icon" href="assets/images/thumbnail.png">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Google Fonts: Inter for modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -24,7 +29,7 @@
     <!-- Section 1: Title and Authors -->
     <header class="py-16 px-4 max-w-5xl mx-auto text-center">
         <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900">VIBE: Visual Instruction Based Editor</h1>
-        
+
         <!-- Section 2: Authors -->
         <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-lg md:text-xl text-slate-600 font-medium mb-4">
             <span>Grigorii Alekseenko<sup>*</sup></span>
@@ -38,31 +43,32 @@
             <span>Mikhail Chernyshov</span>
             <span>Maksim Kuprashevich<sup>†</sup></span>
         </div>
+
         <div class="text-sm text-slate-500 mb-8">
             <p><sup>*</sup>Equal contribution</p>
-            <p><sup>†</sup>Corresponding author: <a href="mailto:mvkuprashevich@gmail.com" class="text-blue-600 hover:text-blue-800">mvkuprashevich@gmail.com</a></p>
+            <p><sup>†</sup>Corresponding author</p>
         </div>
 
         <!-- Section 3: Links -->
         <div class="flex justify-center gap-4 flex-wrap">
             <span class="inline-flex items-center px-6 py-3 bg-slate-400 text-white font-semibold rounded-full shadow-lg cursor-not-allowed">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
                 Paper
             </span>
+
             <a href="https://huggingface.co/spaces/iitolstykh/VIBE-Image-Edit-DEMO" target="_blank" class="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition duration-300 shadow-lg">
                 <img src="assets/images/hf-logo.png" alt="HuggingFace" class="w-5 h-5 mr-2">
                 Demo
             </a>
+
             <a href="https://huggingface.co/iitolstykh/VIBE-Image-Edit" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">
                 <img src="assets/images/hf-logo.png" alt="HuggingFace" class="w-5 h-5 mr-2">
                 HuggingFace Model
             </a>
-            <a href="https://github.com/ai-forever/VIBE" target="_blank" class="inline-flex items-center px-6 py-3 bg-slate-800 text-white font-semibold rounded-full hover:bg-slate-900 transition duration-300 shadow-lg">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                GitHub Code
-            </a>
         </div>
-        
+
         <!-- Model Specifications -->
         <div class="mt-8 text-lg text-slate-600">
             <p class="mb-2"><strong>GPU Memory:</strong> 24 GB</p>
@@ -88,7 +94,7 @@
                 popular variants typically ranging from 6B to 20B parameters.
                 <br><br>
                 This paper presents a compact, high-throughput pipeline
-                for instruction-based image editing that uses a modern 
+                for instruction-based image editing that uses a modern
                 2B-parameter Qwen3-VL model to guide the editing process
                 and the 1.6B-parameter diffusion model Sana for image
                 generation. The proposed approach combines architectural
@@ -154,10 +160,8 @@
 
     <!-- Footer -->
     <footer class="py-8 text-center text-slate-500 text-sm">
-        2026 Layer Team.
     </footer>
 
     <script src="js/main.js"></script>
 </body>
 </html>
-
