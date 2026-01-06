@@ -132,17 +132,18 @@
             <h2 class="text-3xl font-bold mb-8 text-white text-center">BibTeX</h2>
 
             <div class="bg-slate-800 p-6 rounded-lg relative overflow-x-auto border border-slate-700">
-                <pre class="text-sm font-mono leading-relaxed" id="bibtex-content">@misc{alekseenko2026vibe,
+                <pre class="text-sm font-mono leading-relaxed" id="bibtex-content">@article{alekseenko2026vibe,
   title         = {VIBE: Visual Instruction Based Editor},
   author        = {Alekseenko, Grigorii and Gordeev, Aleksandr and Tolstykh, Irina and Suleimanov, Bulat and Dokholyan, Vladimir and Fedorov, Georgii and Yakubson, Sergey and Tsybina, Aleksandra and Chernyshov, Mikhail and Kuprashevich, Maksim},
+  journal       = {arXiv preprint arXiv:2601.02242},
   year          = {2026},
-  eprint        = {2601.02242},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CV},
   doi           = {10.48550/arXiv.2601.02242},
   url           = {https://arxiv.org/abs/2601.02242}
 }</pre>
-                <button id="copy-btn" class="absolute top-4 right-4 text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded transition text-white">Copy</button>
+
+                <button id="copy-btn" type="button" class="absolute top-4 right-4 text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded transition text-white">
+                    Copy
+                </button>
             </div>
         </div>
     </section>
@@ -152,5 +153,53 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('copy-btn');
+            const pre = document.getElementById('bibtex-content');
+            if (!btn || !pre) return;
+
+            const setLabelTemporarily = (label) => {
+                const old = btn.textContent;
+                btn.textContent = label;
+                window.setTimeout(() => { btn.textContent = old; }, 1500);
+            };
+
+            btn.addEventListener('click', async () => {
+                const text = (pre.innerText || '').trim();
+                if (!text) {
+                    setLabelTemporarily('Empty');
+                    return;
+                }
+
+                try {
+                    await navigator.clipboard.writeText(text);
+                    setLabelTemporarily('Copied');
+                } catch (err) {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    ta.setAttribute('readonly', '');
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    ta.style.left = '0';
+                    ta.style.top = '0';
+                    document.body.appendChild(ta);
+                    ta.focus();
+                    ta.select();
+
+                    let ok = false;
+                    try {
+                        ok = document.execCommand('copy');
+                    } catch (e) {
+                        ok = false;
+                    }
+                    document.body.removeChild(ta);
+
+                    setLabelTemporarily(ok ? 'Copied' : 'Copy failed');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
