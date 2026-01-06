@@ -81,31 +81,15 @@
         <div class="max-w-[80%] mx-auto px-6">
             <h2 class="text-3xl font-bold mb-8 text-center text-slate-900">Abstract</h2>
             <p class="text-lg leading-relaxed text-slate-700 text-justify">
-                Instruction-based image editing is one of the most rapidly
-                advancing areas in generative AI. Over the past year,
-                progress has been substantial, with dozens of open-source
-                models released alongside several highly capable commercial systems.
+                Instruction-based image editing is among the fastest developing areas in generative AI. Over the past year, the field has reached a new level, with dozens of open-source models released alongside highly capable commercial systems.
                 <br><br>
-                Despite this progress, relatively few open-source models
-                have reached production-level quality. Moreover, diffusion
-                models, the most common backbone for such pipelines, are
-                often prohibitively large and computationally expensive for
-                many real-world deployments and research settings, with
-                popular variants typically ranging from 6B to 20B parameters.
+                However, only a limited number of open-source approaches currently achieve real-world quality. In addition, diffusion backbones, the dominant choice for these pipelines, are often large and computationally expensive for many deployments and research settings, with widely used variants typically containing 6B to 20B parameters.
                 <br><br>
-                This paper presents a compact, high-throughput pipeline
-                for instruction-based image editing that uses a modern
-                2B-parameter Qwen3-VL model to guide the editing process
-                and the 1.6B-parameter diffusion model Sana for image
-                generation. The proposed approach combines architectural
-                choices that enable low-cost inference with data collection
-                and processing, training configuration, and experimental
-                design decisions aimed at maintaining production-level
-                quality across major categories of editing operations that
-                remain feasible at this model scale.
+                This paper presents a compact, high-throughput instruction-based image editing pipeline that uses a modern 2B-parameter Qwen3-VL model to guide the editing process and the 1.6B-parameter diffusion model Sana1.5 for image generation. Our design decisions across architecture, data processing, training configuration, and evaluation target low-cost inference and strict source consistency while maintaining high quality across the major edit categories feasible at this scale.
                 <br><br>
-                The model requires 24 GB of GPU memory, and can generate edited images
-                at up to 2K resolution in 4 seconds on an NVIDIA H100.
+                Evaluated on the ImgEdit and GEdit benchmarks, the proposed method matches or exceeds the performance of substantially heavier baselines, including models with several times as many parameters and higher inference cost, and is particularly strong on edits that require preserving the input image, such as an attribute adjustment, object removal, background edits, and targeted replacement.
+                <br><br>
+                The model fits within 24 GB of GPU memory and generates edited images at up to 2K resolution in approximately 4 seconds on an NVIDIA H100 in BF16, without additional inference optimizations or distillation.
             </p>
         </div>
     </section>
@@ -146,14 +130,26 @@
     <section class="py-16 bg-slate-900 text-slate-300">
         <div class="max-w-3xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-8 text-white text-center">BibTeX</h2>
+
             <div class="bg-slate-800 p-6 rounded-lg relative overflow-x-auto border border-slate-700">
-                <pre class="text-sm font-mono leading-relaxed" id="bibtex-content">@article{vibe2026,
-  title = {VIBE: Visual Instruction Based Editor},
-  author = {Grigorii Alekseenko and Aleksandr Gordeev and Irina Tolstykh and Bulat Suleimanov and Vladimir Dokholyan and Georgii Fedorov and Sergey Yakubson and Aleksandra Tsybina and Mikhail Chernyshov and Maksim Kuprashevich},
-  journal = {arXiv preprint},
-  year = {2026}
+                <pre class="text-sm font-mono leading-relaxed" id="bibtex-content">@misc{alekseenko2026vibe,
+  title         = {VIBE: Visual Instruction Based Editor},
+  author        = {Alekseenko, Grigorii and Gordeev, Aleksandr and Tolstykh, Irina and Suleimanov, Bulat and Dokholyan, Vladimir and Fedorov, Georgii and Yakubson, Sergey and Tsybina, Aleksandra and Chernyshov, Mikhail and Kuprashevich, Maksim},
+  year          = {2026},
+  eprint        = {2601.02242},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi           = {10.48550/arXiv.2601.02242},
+  url           = {https://arxiv.org/abs/2601.02242}
 }</pre>
                 <button id="copy-btn" class="absolute top-4 right-4 text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded transition text-white">Copy</button>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-2xl font-bold mb-4 text-white text-center">LaTeX</h3>
+                <div class="bg-slate-800 p-6 rounded-lg overflow-x-auto border border-slate-700">
+                    <pre class="text-sm font-mono leading-relaxed">\cite{alekseenko2026vibe}</pre>
+                </div>
             </div>
         </div>
     </section>
